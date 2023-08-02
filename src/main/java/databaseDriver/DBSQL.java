@@ -2,9 +2,11 @@ package databaseDriver;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import javax.servlet.http.HttpServletRequest;
+import java.sql.SQLSyntaxErrorException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class DBSQL 
 {
@@ -12,7 +14,23 @@ public class DBSQL
 	
 	public static void main(String[] args)
 	{
+		System.out.println("1");
+		
 		DBSQL sql=new DBSQL();
+		
+		String query="SELECT username FROM endUsers";
+		
+		ArrayList<Object[]> data=sql.select(query);
+		
+		System.out.println("2");
+		
+		for(int i=0; i<data.size(); i++)
+		{
+			for(int j=0; j<data.get(i).length; j++)
+			{
+				System.out.println(data.get(i)[j]);
+			}
+		}
 	}
 	
 	public DBSQL()
@@ -29,7 +47,12 @@ public class DBSQL
 	
 	public void close()
 	{
-		
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void containsEntry()
@@ -102,6 +125,69 @@ public class DBSQL
 	public void insert()
 	{
 		
+	}
+	
+	public ArrayList<Object[]> select(String query)
+	{
+		Statement statement;
+		
+		int colCount;
+		
+		ArrayList<Object[]> data=new ArrayList<Object[]>();
+		Object[] row;
+		
+		try
+		{
+			statement=connection.createStatement();
+			
+			ResultSet rs=statement.executeQuery(query);
+			
+			try
+			{
+				colCount=rs.getMetaData().getColumnCount();
+				
+				while(rs.next())
+				{
+					if(rs.getMetaData().getColumnCount()!=colCount)
+					{
+						throw new Exception("Wrong # of Columns: "
+					+colCount+" v.s. RS="
+								+rs.getMetaData().getColumnCount());
+					}
+					
+					row=new Object[colCount];
+					
+					for(int i=0; i<colCount; i++)
+					{
+						row[i]=rs.getObject(i+1);
+					}
+					
+					data.add(row);
+				}
+			}finally
+			{
+				try
+				{
+					rs.close();
+				}catch(Exception ignore) {}
+			}
+			
+			statement.close();
+		}catch(SQLSyntaxErrorException ex)
+		{
+			System.out.println("SQL Syntax Error");
+			ex.printStackTrace();
+		}catch(SQLException ex)
+		{
+			System.out.println("SQL Exception error");
+			ex.printStackTrace();
+		}catch(Exception ex)
+		{
+			System.out.println("Uncaught Exception: "+ex.getClass());
+			ex.printStackTrace();
+		}
+		
+		return data;
 	}
 	
 	public void verifyCredentials()
