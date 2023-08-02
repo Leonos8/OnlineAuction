@@ -8,11 +8,6 @@
 	
 	databaseDriver.DBSQL sql=new databaseDriver.DBSQL();
 	
-	if(sql.connection==null)
-	{
-		System.out.println("NULL");
-	}
-	
 	String query="SELECT * FROM endUsers "
 			+"WHERE username='"+uname+"';";
 			

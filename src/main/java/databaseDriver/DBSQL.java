@@ -12,7 +12,13 @@ public class DBSQL
 {
 	public Connection connection;
 	
-	public static void main(String[] args)
+	public String host=null;
+	public Integer port=3306;
+	public String database="Accounts";
+	public String sqlUID="root";
+	public String sqlPID="root";
+	
+	/*public static void main(String[] args)
 	{
 		DBSQL sql=new DBSQL();
 		
@@ -27,18 +33,11 @@ public class DBSQL
 				System.out.println(data.get(i)[j]);
 			}
 		}
-	}
+	}*/
 	
 	public DBSQL()
-	{
-		String host=null;
-		Integer port=3306;
-		String database="Accounts";
-		String sqlUID="root";
-		String sqlPID="root";
-		
-		connection=getConnection(host, port, database, sqlUID, 
-				sqlPID);
+	{		
+		connection=getConnection();
 	}
 	
 	public void close()
@@ -62,8 +61,7 @@ public class DBSQL
 		
 	}
 	
-	public Connection getConnection(String host, Integer port, 
-			String database, String sqlUID, String sqlPID)
+	public Connection getConnection()
 	{
 		Connection dbConnection=null;
 		
@@ -122,6 +120,23 @@ public class DBSQL
 	{
 		
 	}
+	
+	/*public void refreshConnection()
+	{
+		if(!db_connection.isValid(10))
+
+        {
+
+          connectToServer();
+
+
+
+          if(!db_connection.isValid(10))
+
+            throw new Exception("Connection is not Valid");
+
+        }
+	}*/
 	
 	public ArrayList<Object[]> select(String query)
 	{
