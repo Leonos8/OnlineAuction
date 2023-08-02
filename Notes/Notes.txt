@@ -1,0 +1,4 @@
+TODO:
+1) Get SQL working with basic queries
+2) Check if the information given for create account and login meets 
+requirements (not too small or too long, can not contain quotes, etc)
