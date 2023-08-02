@@ -23,7 +23,7 @@ public class DBSQL
 		String sqlUID="root";
 		String sqlPID="root";
 		
-		connection=createConnection(host, port, database, sqlUID, 
+		connection=getConnection(host, port, database, sqlUID, 
 				sqlPID);
 	}
 	
@@ -37,7 +37,13 @@ public class DBSQL
 		
 	}
 	
-	public Connection createConnection(String host, Integer port, 
+	//Wont delete an entry, but will make an entry invalid
+	public void delete()
+	{
+		
+	}
+	
+	public Connection getConnection(String host, Integer port, 
 			String database, String sqlUID, String sqlPID)
 	{
 		Connection dbConnection=null;
@@ -91,12 +97,6 @@ public class DBSQL
 		}
 		
 		return dbConnection;
-	}
-	
-	//Wont delete an entry, but will make an entry invalid
-	public void delete()
-	{
-		
 	}
 	
 	public void insert()
