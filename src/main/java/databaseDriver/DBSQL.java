@@ -10,19 +10,15 @@ import java.util.ArrayList;
 
 public class DBSQL 
 {
-	Connection connection;
+	public Connection connection;
 	
 	public static void main(String[] args)
 	{
-		System.out.println("1");
-		
 		DBSQL sql=new DBSQL();
 		
-		String query="SELECT username FROM endUsers";
+		String query="SELECT * FROM endUsers";
 		
 		ArrayList<Object[]> data=sql.select(query);
-		
-		System.out.println("2");
 		
 		for(int i=0; i<data.size(); i++)
 		{

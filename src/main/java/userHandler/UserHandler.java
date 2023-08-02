@@ -15,4 +15,10 @@ public class UserHandler
 	{
 		System.out.println("Create Requested!");
 	}
+	
+	public static void loginAccount(String uname, String pword)
+	{
+		System.out.println(uname);
+		System.out.println(pword);
+	}
 }
