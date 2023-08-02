@@ -1,8 +1,35 @@
 package databaseDriver;
 
+import java.sql.SQLException;
+
 public class DBSQL 
 {
-	public DBSQL()
+	public static void main(String[] args)
+	{
+		System.out.println("HI");
+		try {
+			DBSQL sql=new DBSQL();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public DBSQL() throws SQLException
+	{
+		String sqlUname="root";
+		String sqlPword="root";
+		
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+		}catch(ClassNotFoundException ex)
+		{
+			ex.printStackTrace();
+		}
+	}
+	
+	public void close()
 	{
 		
 	}
