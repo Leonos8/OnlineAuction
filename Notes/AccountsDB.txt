@@ -1,0 +1,19 @@
+endUsers(UID, Username, Password, email, phone, active, last accessed, Seller)
+
+UID (account serial number, could be incremental based on when the account was created, could be first char 
+of username, underscore, serial number (or incremental), or could be randomized series of numbers)
+
+Username=uname
+
+Password=psw
+
+Email=eml
+
+Phone=phone;
+
+active (boolean that identifies whether the account has been deactivated or not. Its good practice for records
+to instead of delete the account, just to use a boolean to state that the account has been deactivated, this can
+also be used when changing information, deactivate the account with old information and create a new one with
+the new information (and transfer over any information)
+
+Last accessed (We can store the last time the account was logged into)
