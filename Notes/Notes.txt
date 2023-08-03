@@ -1,4 +1,47 @@
 TODO:
-1) Get SQL working with basic queries
-2) Check if the information given for create account and login meets 
+1) Check if the information given for create account and login meets 
 requirements (not too small or too long, can not contain quotes, etc)
+
+2) drop down that logs out of account (Maybe actual logout feature since
+information should be saved, not just going back to login page
+
+3) Allow create accounts
+
+4) Allow to delete accounts, but instead of deleting, set active to false
+then create a new entry with new details
+
+5) Alter the lastAccessed column each time a user logs in
+
+6) Search list of items according to various criteria describing the item
+Make this support as complex searches as possible
+
+7) Allow alerts for items that are restocked or whatever. Email???
+
+8) History of bids for any specific auction.
+
+9) List of all auctions and bids a specific buyer or seller has 
+participated in. Maybe search accounts or store info in the account
+
+10) List of similar items on auction in the preceding month (and auction
+information about them. We decide similarity measure
+
+11) Maybe add a feature in profile to allow anonymity by selecting first
+character of username, then underscore, then ID (A_1)
+
+12) Create customer rep database and allow for creation of customer reps
+
+13) Allow a support section for customers to reach out to customer reps
+
+14) Allow customer reps to modify information (including resetting 
+passwords, removing bids, and removing illegal auctions)
+
+15) 1 Administrative account can create accounts for customer reps
+
+16) Administrative account can generate summary sales reports
+
+17) Summary sales reports include total earnings, 
+earnings per {item, item type, endUser}, best selling {items, endUsers}
+
+18) Allow for change in items available. Maybe a class that can alter 
+Items in the database, and give access to customer reps and admin? Maybe
+Also automatically update based on items that are being sold?
