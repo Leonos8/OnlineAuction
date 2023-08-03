@@ -5,65 +5,72 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Online Auction</title>
-		
-		<style>
-			.btn 
-			{
-  				background-color: white;
-  				/*border: none; *//* Remove borders */
-  				padding: 12px 16px; /* Some padding */
-  				font-size: 16px; /* Set a font size */
-  				cursor: pointer; /* Mouse pointer on hover */
-  				position: absolute;
-  				right: 0.5em;
-			}
-			
-			.dropbtn
-			{
-				position: relative;
-				display: inline-block;
-				float: right;
-			}
-			
-			.list
-			{
-				display: none;
-				position: absolute;
-				background-color: blue;
-				min-width: 158px;
-				z-index: 1;
-			}
-			
-			.list a:hover
-			{
-				background-color: blue;
-				color: #green;
-			}
-
-			
-			/* Darker background on mouse-over */
-			.btn:hover .list
-			{
-  				display: block;
-  				background-color: LightGray;
-			}
-			
-			.btn:hover .dropbtn
-			{
-				background-color: transparent;
-			}
-			
-			
-		</style>
 	</head>
+	
 	<body>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<div class="dropbtn">
-			<button class="btn"><i class="fa fa-user"></i>User</button>
-			<div class="list">
-				<a href="#">Logout</a>
-			</div>
-		</div>
-		
+		<nav>
+			<ul>
+				<li>
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+					<a href="#"><i class="fa fa-user"></i>User</a>				
+					<ul class="dropdown">
+						<li><a href="#">Log Out</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
 	</body>
+	
+	<style>
+	
+		*{
+			padding: 0;
+			margin: 1;
+			font-family: sans-serif;
+			left: 1;
+			
+		}
+	
+		ul{
+			list-style: none;
+			backgrond: black;
+		}
+	
+		ul li{
+			display: inline-block;
+			position: relative;
+			border: 2px solid black;
+		}
+	
+		ul li a{
+			display: block;
+			padding: 13px 16px;
+			color: black;
+			text-decoration: none;
+			text-align: center;
+			font-size: 16px;
+		}
+	
+		ul li ul.dropdown li{
+			display: block;
+		}
+		
+		ul li ul.dropdown{
+			width: 100%;
+			background: white;
+			position: absolute;
+			z-index: 1;
+			display: none;
+		}
+	
+		ul li a:hover{
+			background: blue;
+		}
+	
+		ul li:hover ul.dropdown{
+			display: block;
+		}
+	
+	</style>
+	
 </html>
