@@ -36,6 +36,8 @@
 	{
 		System.out.println(4);
 		System.out.println("LOGIN");
+		
+		//Make this open the HomePage.jsp
 	}
 %>
 

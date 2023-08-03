@@ -5,6 +5,8 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Online Auction Create Account</title>
+		
 		<style>
 			body {font-family: Arial, Helvetica, sans-serif;}
 			form {border: 3px solid #f1f1f1;}
