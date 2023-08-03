@@ -14,7 +14,7 @@
 				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 					<a href="#"><i class="fa fa-user"></i>User</a>				
 					<ul class="dropdown">
-						<li><a href="#">Log Out</a></li>
+						<li><a href="../login/LoginPage.jsp">Log Out</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -24,22 +24,24 @@
 	<style>
 	
 		*{
+	
 			padding: 0;
 			margin: 1;
 			font-family: sans-serif;
-			left: 1;
 			
 		}
 	
 		ul{
 			list-style: none;
 			backgrond: black;
+			
 		}
 	
 		ul li{
 			display: inline-block;
 			position: relative;
 			border: 2px solid black;
+			
 		}
 	
 		ul li a{
@@ -49,10 +51,12 @@
 			text-decoration: none;
 			text-align: center;
 			font-size: 16px;
+		
 		}
 	
 		ul li ul.dropdown li{
 			display: block;
+			
 		}
 		
 		ul li ul.dropdown{
@@ -61,6 +65,7 @@
 			position: absolute;
 			z-index: 1;
 			display: none;
+			
 		}
 	
 		ul li a:hover{
