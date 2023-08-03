@@ -52,7 +52,8 @@ public class UserHandler
 		}
 		//This one can make sure size is within specific bounds, as well as 
 		//Doesnt contain any bad characters such as quotes
-		else if(String.valueOf(data.get(0)[1]).contains("\""))
+		else if(String.valueOf(data.get(0)[1]).contains("\"")
+			|| String.valueOf(data.get(0)[1]).length()>32)
 		{
 			System.out.println(3);
 			System.out.println("Incorrect information");
