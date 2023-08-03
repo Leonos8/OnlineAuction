@@ -14,7 +14,7 @@ public class DBSQL
 	
 	public String host=null;
 	public Integer port=3306;
-	public String database="Accounts";
+	public String database;
 	public String sqlUID="root";
 	public String sqlPID="root";
 	
@@ -35,8 +35,9 @@ public class DBSQL
 		}
 	}*/
 	
-	public DBSQL()
-	{		
+	public DBSQL(String database)
+	{	
+		this.database=database;
 		connection=getConnection();
 	}
 	
