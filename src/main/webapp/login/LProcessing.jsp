@@ -63,7 +63,7 @@
 		%>
 		
 		<html>
-			<meta http-equiv="Refresh" content="0; url='.../auction/HomePage.jsp'" />
+			<meta http-equiv="Refresh" content="0; url='../auction/HomePage.jsp'" />
 		</html>
 		
 		<%
