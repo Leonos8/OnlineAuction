@@ -19,11 +19,27 @@
 	{
 		System.out.println(1);
 		System.out.println("Incorrect information");
+		
+		%>
+		
+		<html>
+			<meta http-equiv="Refresh" content="0; url='LoginPage.jsp'" />
+		</html>
+		
+		<%
 	}
 	else if(!data.get(0)[2].equals(pword))
 	{
 		System.out.println(2);
 		System.out.println("Incorrect information");
+		
+		%>
+		
+		<html>
+			<meta http-equiv="Refresh" content="0; url='LoginPage.jsp'" />
+		</html>
+		
+		<%
 	}
 	//This one can make sure size is within specific bounds, as well as 
 	//Doesnt contain any bad characters such as quotes
@@ -31,16 +47,32 @@
 	{
 		System.out.println(3);
 		System.out.println("Incorrect information");
+		
+		%>
+		
+		<html>
+			<meta http-equiv="Refresh" content="0; url='LoginPage.jsp'" />
+		</html>
+		
+		<%
 	}
 	else
 	{
 		System.out.println(4);
 		System.out.println("LOGIN");
+		%>
+		
+		<html>
+			<meta http-equiv="Refresh" content="0; url='.../auction/HomePage.jsp'" />
+		</html>
+		
+		<%
 		
 		//Make this open the HomePage.jsp
-	}
-%>
-
-<html>
+		/*
+		<html>
 	<meta http-equiv="Refresh" content="0; url='LoginPage.jsp'" />
 </html>
+		*/
+	}
+%>
