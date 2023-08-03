@@ -45,3 +45,7 @@ earnings per {item, item type, endUser}, best selling {items, endUsers}
 18) Allow for change in items available. Maybe a class that can alter 
 Items in the database, and give access to customer reps and admin? Maybe
 Also automatically update based on items that are being sold?
+
+19) Create database for Items. Inside Items, have tables for different 
+Types of items. Inside Accounts, have tables for endUsers, customerReps,
+And Admin.
