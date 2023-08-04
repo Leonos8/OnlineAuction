@@ -117,27 +117,81 @@ public class DBSQL
 		return dbConnection;
 	}
 	
-	public void insert()
+	public int getRowCount(String table)
 	{
+		int count=0;
 		
+		try
+		{
+			Statement statement;
+			statement=connection.createStatement();
+			
+			String query="select count(*) from "+table;
+			
+			ResultSet rs = statement.executeQuery(query);
+			rs.next();
+			count = rs.getInt(1);
+		}catch(SQLException ex)
+		{
+			ex.printStackTrace();
+		}
+		
+		return count;
 	}
 	
-	/*public void refreshConnection()
+	public void insert(String query) throws Exception
 	{
-		if(!db_connection.isValid(10))
+		Statement statement;
+		
+		statement=connection.createStatement();
+			
+		boolean status=false;
+			
+		try
+		{
+			status=statement.execute(query);
+		}catch(SQLSyntaxErrorException ex)
+		{
+			System.out.println("SQL Syntax Error");
+			ex.printStackTrace();
+		}catch(Exception ex)
+		{
+			if(ex.getClass().toString().equals("com.mysql."
+					+ "jdbc.exceptions.jdbc4."
+					+ "CommunicationsException"))
+			{
+				connection=getConnection();
+				if(!connection.isValid(10))
+				{
+					throw new Exception("Connection is not valid");
+				}
+					
+				status=statement.execute(query);
+			}
+			else
+			{
+				System.err.println("Exception catch NOT "
+						+ "IMPLEMENTED YET for "+ex.getClass());
+				ex.printStackTrace();
+			}
+		}finally
+		{
+			try
+			{
+				statement.close();
+	     	}catch(Exception ignore) {}
 
-        {
-
-          connectToServer();
-
-
-
-          if(!db_connection.isValid(10))
-
-            throw new Exception("Connection is not Valid");
-
-        }
-	}*/
+	     	if(status)
+	     	{
+	       	// true if the first result is a ResultSet object
+	    	// false if it is an update count or there are no results
+	      	// Use the methods getResultSet or getUpdateCount
+	      	// to retrieve the result, 
+	     	//and getMoreResults to move to any
+	      	// subsequent result(s).
+	      	}
+		}
+	}
 	
 	public ArrayList<Object[]> select(String query)
 	{

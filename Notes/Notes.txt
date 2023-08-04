@@ -49,3 +49,6 @@ Also automatically update based on items that are being sold?
 19) Create database for Items. Inside Items, have tables for different 
 Types of items. Inside Accounts, have tables for endUsers, customerReps,
 And Admin.
+
+20) Pop ups for when login or create account fails (such as criteria or 
+username taken, etc)
